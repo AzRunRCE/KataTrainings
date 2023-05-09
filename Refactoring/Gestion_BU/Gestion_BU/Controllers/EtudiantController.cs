@@ -10,13 +10,13 @@ namespace Gestion_BU.Controllers
         private readonly RegistreService _registreService;
         private readonly UniversiteRepository _universiteRepository;
 
-        private readonly EdutiantRepository _etudiantRepository;
+        private readonly EtudiantRepository _etudiantRepository;
 
-        public EtudiantController(RegistreService registreService, UniversiteRepository universityRepository, EdutiantRepository edutiantRepository)
+        public EtudiantController(RegistreService registreService, UniversiteRepository universityRepository, EtudiantRepository etudiantRepository)
         {
             _registreService = registreService;
             _universiteRepository = universityRepository;
-            _etudiantRepository = edutiantRepository;
+            _etudiantRepository = etudiantRepository;
         }
 
         public IActionResult Index()

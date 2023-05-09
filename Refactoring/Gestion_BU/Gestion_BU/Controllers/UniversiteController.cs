@@ -8,7 +8,6 @@ namespace Gestion_BU.Controllers
     {
         private readonly UniversiteRepository _universityRepository;
 
- 
 
         public UniversiteController( UniversiteRepository universityRepository )
         {

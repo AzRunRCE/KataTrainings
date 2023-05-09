@@ -26,7 +26,8 @@ namespace Gestion_BU.Repositories
                 Name = "University of Oxford",
                 Forfait = Forfait.Premium
             }
-    };
+        };
+
         public Universite GetById(int universityId)
         {
             return Universities.Single(x => x.Id == universityId);

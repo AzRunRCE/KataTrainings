@@ -7,7 +7,7 @@ using Gestion_BU.Entities;
 
 namespace Gestion_BU.Repositories
 {
-    public class EdutiantRepository
+    public class EtudiantRepository
     {
         private static List<Etudiant> _etudiants = new List<Etudiant>()
         {

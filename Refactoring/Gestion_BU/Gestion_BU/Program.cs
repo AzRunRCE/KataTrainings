@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddScoped<Gestion_BU.Services.RegistreService>();
 builder.Services.AddScoped<UniversiteRepository>();
-builder.Services.AddScoped<EdutiantRepository>();
+builder.Services.AddScoped<EtudiantRepository>();
 
 builder.Services.AddControllersWithViews();
 var app = builder.Build();
