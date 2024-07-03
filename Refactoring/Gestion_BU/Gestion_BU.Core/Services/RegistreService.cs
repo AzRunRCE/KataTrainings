@@ -8,16 +8,17 @@ namespace Gestion_BU.Core.Services
     {
         private readonly IEtudiantRepository etudiantRepository;
         private readonly IUniversiteRepository universiteRepository;
-
-        public RegistreService(IEtudiantRepository edutiantRepository, IUniversiteRepository universiteRepository)
+        private readonly ILogger _logger;
+        public RegistreService(IEtudiantRepository edutiantRepository, IUniversiteRepository universiteRepository, ILogger logger)
         {
             etudiantRepository = edutiantRepository;
             this.universiteRepository = universiteRepository;
+            _logger = logger;
         }
         public bool AjouterEtudiant(string emailAddress, int universityId)
         {
 
-            Console.WriteLine(string.Format("Log: Debut Ajout d'un etudiant avec cet e-mail '{0}'", emailAddress));
+            _logger.Log(string.Format("Log: Debut Ajout d'un etudiant avec cet e-mail '{0}'", emailAddress));
 
             if (string.IsNullOrWhiteSpace(emailAddress))
             {
@@ -48,7 +49,7 @@ namespace Gestion_BU.Core.Services
             etudiantRepository.Add(currEtudiant);
 
 
-            Console.WriteLine(string.Format("Log: Fin Ajout d'un etudiant avec cet e-mail '{0}'", emailAddress));
+            _logger.Log(string.Format("Log: Fin Ajout d'un etudiant avec cet e-mail '{0}'", emailAddress));
 
             return true;
         }

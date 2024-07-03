@@ -1,5 +1,6 @@
 using Gestion_BU.Core.Interfaces;
 using Gestion_BU.Core.Services;
+using Gestion_BU.Infrastructure;
 using Gestion_BU.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddScoped<RegistreService>();
 builder.Services.AddScoped<IUniversiteRepository, UniversiteRepository>();
 builder.Services.AddScoped<IEtudiantRepository,EtudiantRepository>();
+builder.Services.AddScoped<Gestion_BU.Core.Interfaces.ILogger, ConsoleLogger>();
 
 builder.Services.AddControllersWithViews();
 var app = builder.Build();
