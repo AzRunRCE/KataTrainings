@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Gestion_BU.Entities;
+﻿
 
-namespace Gestion_BU.Repositories
+using Gestion_BU.Core.Entities;
+using Gestion_BU.Core.Interfaces;
+
+namespace Gestion_BU.Infrastructure.Repositories
 {
-    public class EdutiantRepository
+    public class EtudiantRepository : IEtudiantRepository
     {
         private static List<Etudiant> _etudiants = new List<Etudiant>()
         {

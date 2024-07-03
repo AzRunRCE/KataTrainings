@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Gestion_BU.Entities
+namespace Gestion_BU.Core.Entities
 {
     public class Etudiant
     {

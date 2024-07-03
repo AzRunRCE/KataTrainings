@@ -1,9 +1,9 @@
-﻿
-using Gestion_BU.Entities;
+﻿using Gestion_BU.Core.Entities;
+using Gestion_BU.Core.Interfaces;
 
-namespace Gestion_BU.Repositories
+namespace Gestion_BU.Infrastructure.Repositories
 {
-    public class UniversiteRepository
+    public class UniversiteRepository : IUniversiteRepository
     {
 
         private List<Universite> Universities = new List<Universite>()

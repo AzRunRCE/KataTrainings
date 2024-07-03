@@ -1,4 +1,4 @@
-﻿using Gestion_BU.Entities;
+﻿using Gestion_BU.Core.Entities;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel;
 

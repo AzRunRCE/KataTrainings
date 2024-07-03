@@ -1,13 +1,22 @@
-﻿using Gestion_BU.Entities;
-using Gestion_BU.Repositories;
+﻿
+using Gestion_BU.Core.Entities;
+using Gestion_BU.Core.Interfaces;
 
-namespace Gestion_BU.Services
+namespace Gestion_BU.Core.Services
 {
     public class RegistreService
     {
+        private readonly IEtudiantRepository etudiantRepository;
+        private readonly IUniversiteRepository universiteRepository;
+
+        public RegistreService(IEtudiantRepository edutiantRepository, IUniversiteRepository universiteRepository)
+        {
+            etudiantRepository = edutiantRepository;
+            this.universiteRepository = universiteRepository;
+        }
         public bool AjouterEtudiant(string emailAddress, int universityId)
         {
-           
+
             Console.WriteLine(string.Format("Log: Debut Ajout d'un etudiant avec cet e-mail '{0}'", emailAddress));
 
             if (string.IsNullOrWhiteSpace(emailAddress))
@@ -15,20 +24,18 @@ namespace Gestion_BU.Services
                 return false;
             }
 
-            var etudiantRepository = new EdutiantRepository();
 
             if (etudiantRepository.Exists(emailAddress))
             {
                 return false;
             }
 
-            var UniversiteRepository = new UniversiteRepository();
 
-            var universite = UniversiteRepository.GetById(universityId);
+            var universite = universiteRepository.GetById(universityId);
 
             var currEtudiant = new Etudiant(emailAddress, universityId);
 
-           
+
             if (universite.Forfait == Forfait.Standard)
             {
                 currEtudiant.NbTelechargementMaximum = 10;
@@ -40,12 +47,12 @@ namespace Gestion_BU.Services
 
             etudiantRepository.Add(currEtudiant);
 
-            
+
             Console.WriteLine(string.Format("Log: Fin Ajout d'un etudiant avec cet e-mail '{0}'", emailAddress));
 
             return true;
         }
 
-      
+
     }
 }

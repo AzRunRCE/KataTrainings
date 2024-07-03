@@ -1,5 +1,6 @@
-﻿using Gestion_BU.Repositories;
-using Gestion_BU.Services;
+﻿using Gestion_BU.Core.Interfaces;
+using Gestion_BU.Core.Services;
+using Gestion_BU.Infrastructure.Repositories;
 using Gestion_BU.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,11 +9,11 @@ namespace Gestion_BU.Controllers
     public class EtudiantController : Controller
     {
         private readonly RegistreService _registreService;
-        private readonly UniversiteRepository _universiteRepository;
+        private readonly IUniversiteRepository _universiteRepository;
 
-        private readonly EdutiantRepository _etudiantRepository;
+        private readonly IEtudiantRepository _etudiantRepository;
 
-        public EtudiantController(RegistreService registreService, UniversiteRepository universityRepository, EdutiantRepository edutiantRepository)
+        public EtudiantController(RegistreService registreService, IUniversiteRepository universityRepository, IEtudiantRepository edutiantRepository)
         {
             _registreService = registreService;
             _universiteRepository = universityRepository;

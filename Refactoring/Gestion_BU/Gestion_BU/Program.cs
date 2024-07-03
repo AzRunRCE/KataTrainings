@@ -1,13 +1,14 @@
-using Gestion_BU.Repositories;
-using Gestion_BU.Services;
+using Gestion_BU.Core.Interfaces;
+using Gestion_BU.Core.Services;
+using Gestion_BU.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddScoped<Gestion_BU.Services.RegistreService>();
-builder.Services.AddScoped<UniversiteRepository>();
-builder.Services.AddScoped<EdutiantRepository>();
+builder.Services.AddScoped<RegistreService>();
+builder.Services.AddScoped<IUniversiteRepository, UniversiteRepository>();
+builder.Services.AddScoped<IEtudiantRepository,EtudiantRepository>();
 
 builder.Services.AddControllersWithViews();
 var app = builder.Build();

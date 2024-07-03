@@ -1,4 +1,4 @@
-﻿using Gestion_BU.Repositories;
+﻿using Gestion_BU.Core.Interfaces;
 using Gestion_BU.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,11 +6,11 @@ namespace Gestion_BU.Controllers
 {
     public class UniversiteController : Controller
     {
-        private readonly UniversiteRepository _universityRepository;
+        private readonly IUniversiteRepository _universityRepository;
 
  
 
-        public UniversiteController( UniversiteRepository universityRepository )
+        public UniversiteController(IUniversiteRepository universityRepository )
         {
             _universityRepository = universityRepository;
         }

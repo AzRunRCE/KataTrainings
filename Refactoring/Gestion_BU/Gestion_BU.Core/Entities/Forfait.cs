@@ -1,4 +1,4 @@
-﻿namespace Gestion_BU.Entities
+﻿namespace Gestion_BU.Core.Entities
 {
     public enum Forfait
     {
