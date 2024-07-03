@@ -27,17 +27,7 @@ namespace Gestion_BU.Core.Services
 
             var universite = universiteRepository.GetById(universityId);
 
-            var currEtudiant = new Etudiant(emailAddress, universityId);
-
-
-            if (universite.Forfait == Forfait.Standard)
-            {
-                currEtudiant.NbTelechargementMaximum = 10;
-            }
-            else if (universite.Forfait == Forfait.Premium)
-            {
-                currEtudiant.NbTelechargementMaximum = 10 * 2;
-            }
+            var currEtudiant = new Etudiant(emailAddress, universityId, universite.Forfait);
 
             etudiantRepository.Add(currEtudiant);
 

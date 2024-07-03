@@ -12,10 +12,18 @@ namespace Gestion_BU.Core.Entities
         public int NbTelechargementMaximum { get; set; }
         public int NbLivreTelecharges { get; set; }
 
-        public Etudiant(string emailAddress, int universityId)
+        public Etudiant(string emailAddress, int universityId, Forfait forfait)
         {
             AdresseEmail = emailAddress;
             UniversiteId = universityId;
+            if (forfait == Forfait.Standard)
+            {
+                NbTelechargementMaximum = 10;
+            }
+            else if (forfait == Forfait.Premium)
+            {
+                NbTelechargementMaximum = 10 * 2;
+            }
         }
     }
 }
