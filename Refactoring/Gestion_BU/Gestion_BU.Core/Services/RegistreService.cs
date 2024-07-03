@@ -20,17 +20,10 @@ namespace Gestion_BU.Core.Services
 
             _logger.Log(string.Format("Log: Debut Ajout d'un etudiant avec cet e-mail '{0}'", emailAddress));
 
-            if (string.IsNullOrWhiteSpace(emailAddress))
-            {
-                return false;
-            }
-
-
             if (etudiantRepository.Exists(emailAddress))
             {
                 return false;
             }
-
 
             var universite = universiteRepository.GetById(universityId);
 
