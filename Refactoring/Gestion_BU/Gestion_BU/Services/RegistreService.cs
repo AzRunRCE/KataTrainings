@@ -15,7 +15,7 @@ namespace Gestion_BU.Services
                 return false;
             }
 
-            var etudiantRepository = new EdutiantRepository();
+            var etudiantRepository = new EtudiantRepository();
 
             if (etudiantRepository.Exists(emailAddress))
             {
